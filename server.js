@@ -7,6 +7,8 @@ const express   = require('express');
 const logger      = require('morgan');
 const path        = require('path');
 const bodyParser  = require('body-parser');
+const session     = require('express-session');
+
 const app = express();
 const server = require('http').createServer(app);
 const PORT        = process.argv[2] || process.env.port || 3000;
@@ -17,6 +19,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'dist')));
 
+app.use(session({
+ secret: 'test',
+ resave: false,
+ saveUninitialized: true,
+ cookie: {
+   secure: false
+ }
+}));
 server.listen(PORT, () => console.log('server here! listening on', PORT));
 
 function sendDataPong(){
@@ -70,7 +80,6 @@ io.sockets.on('connection', (socket)=>{
   // console.log(socket);
   }); // end of ping
 }); // end of sockets.on.connect
-
 
 
 

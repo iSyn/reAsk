@@ -24,11 +24,10 @@ class SignInModal extends React.Component {
       <div className='login-account-modal'>
         <header>Log In</header>
         <div className='circle'></div>
-        <form action="/auth" method='post'>
+        <form action="/users" method='post'>
           <input
             type="text"
             name="user[username]"
-            value=""
             placeholder="Username *"
             autoComplete="off"
             required="required"
@@ -37,7 +36,6 @@ class SignInModal extends React.Component {
           <input
             type="password"
             name="user[password]"
-            value=""
             placeholder="Password *"
             autoComplete="off"
             required="required"

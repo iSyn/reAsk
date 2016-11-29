@@ -26,9 +26,11 @@
   },
   "homepage": "https://github.com/teikmeout/reAsk#readme",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
     "express.io": "^1.1.13",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
