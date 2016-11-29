@@ -104,16 +104,16 @@ createNewQuestion(question) {
 }
 
 likeQuestions(event) {
-  console.log(event.target.id);
+  console.log(event.target.id)
   let q = event.target.id;
-  fetch(`/api/questions/q`, {
+  fetch(`/api/questions/${q}`, {
     headers: {
       'Content-Type': 'application/json'
     },
     method: 'PUT',
     body: JSON.stringify({id: q})
   })
-    .then(() => console.log('like shit mofo'))
+    .then(() => console.log('like shit'))
     .catch(err => console.log(err));
 }
 

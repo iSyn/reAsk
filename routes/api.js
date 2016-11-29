@@ -26,7 +26,7 @@ router.post('/questions', addQuestion, (req, res) => {
  res.send('has been posted');
 });
 
-router.post('questions/:id',  (req, res) => {
+router.put('/questions/:id', upVoteQuestion,  (req, res) => {
   res.send('question liked!')
 });
 
