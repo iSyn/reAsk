@@ -34,6 +34,7 @@ db.one(`
 // value and the results(questions) is passed to the response object
 // (res.question)to be used wherever this function is exported to
 function upVoteQuestion(req, res, next) {
+  console.log(req.body)
   db.none(`
     UPDATE questions
     SET votes = votes + 1

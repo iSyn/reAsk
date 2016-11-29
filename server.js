@@ -12,11 +12,12 @@ const server = require('http').createServer(app);
 const PORT        = process.argv[2] || process.env.port || 3000;
 const mdb = require('./model/db');
 const io = require('socket.io').listen(server);
+// const methodOverride = require('method-override')
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'dist')));
-
+// app.use(methodOverride);
 server.listen(PORT, () => console.log('server here! listening on', PORT));
 
 function sendDataPong(){
@@ -96,5 +97,4 @@ const userRouter = require('./routes/users')
 // app.use('/', studentRouter);
 app.use('/api', apiRouter);
 app.use('/teacher', teacherRouter);
-app.use('/users', userRouter)
-
+app.use('/users', userRouter);

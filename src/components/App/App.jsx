@@ -103,6 +103,21 @@ createNewQuestion(question) {
   .catch(err => console.log(err));
 }
 
+likeQuestions(event) {
+  console.log(event.target.id);
+  let q = event.target.id;
+  fetch(`/api/questions/q`, {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'PUT',
+    body: JSON.stringify({id: q})
+  })
+    .then(() => console.log('like shit mofo'))
+    .catch(err => console.log(err));
+}
+
+
   hideCoverPage() {
     const askQuestionModal = document.querySelector('.ask-question-modal')
     const createAccountModal = document.querySelector('.create-account-modal')
@@ -140,8 +155,8 @@ createNewQuestion(question) {
         <MainBody
           getAllQuestions={this.getAllQuestions.bind(this)}
           questions={this.state.questions}
+          likeQuestions={(event) => this.likeQuestions(event)}
         />
-
       </div>
     )
   }

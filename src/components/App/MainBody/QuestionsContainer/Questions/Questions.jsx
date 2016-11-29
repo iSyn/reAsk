@@ -10,7 +10,7 @@ class Questions extends React.Component {
     return(
       <div className='question'>
         <div className='upvote-arrow'>
-          <img src='http://i.imgur.com/nFn8U6a.png' onClick={this.message.bind(this)}/>
+          <img id={this.props.id} src='http://i.imgur.com/nFn8U6a.png' onClick={this.props.likeQuestions}/>
         {/*this is where the upvote value goes*/}
           {/*<p>1</p>*/}
           <p>{this.props.votes}</p>

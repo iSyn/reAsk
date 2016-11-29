@@ -17,10 +17,12 @@ const QuestionsContainer = props => {
     return (
       <Questions
         key={i}
+        id={q.id}
         votes={q.votes}
         question_title={q.question_title}
         question_body={q.question_body}
         question_tags={q.question_tags}
+        likeQuestions={props.likeQuestions}
       />
     )
   });
