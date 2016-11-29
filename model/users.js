@@ -1,5 +1,5 @@
 const db = require('./db');
-const bcrypt      = require('bcrypt');
+// const bcrypt      = require('bcrypt');
 // const session     = require('express-session');
 //query the database and get all users and send that in the response object
 function showAllUsers(req, res, next){
