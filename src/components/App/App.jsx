@@ -58,10 +58,6 @@ sendDataPing(){
 
 }
 
-
-
-
-
 //function call to the api to retrieve all questions
 getAllQuestions(){
   console.log('inside of getAllQuestions APPjsx ')
@@ -113,7 +109,7 @@ likeQuestions(event) {
     method: 'PUT',
     body: JSON.stringify({id: q})
   })
-    .then(() => console.log('like shit'))
+    .then(this.sendDataPing)
     .catch(err => console.log(err));
 }
 

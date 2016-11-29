@@ -50,8 +50,7 @@ io.sockets.on('connection', (socket)=>{
   console.log('i hear the ping', pingu.message);
   (()=>{
     let me= mdb.any(`
-    SELECT *
-    FROM questions;
+    SELECT * FROM questions ORDER BY id DESC;
    `)
     .then((users) => {
     //   res.users = users;
