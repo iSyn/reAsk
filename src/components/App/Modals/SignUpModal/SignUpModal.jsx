@@ -43,7 +43,7 @@ class SignUpModal extends React.Component {
             /> <br />
           <select name="user[course]" required="required">
             <option value="" disabled selected>Select your course</option>
-            <option value="wholphons">WDI Wholphins</option>
+            <option value="wholphins">WDI Wholphins</option>
             <option value="zonkeys">WDI Zonkeys</option>
             <option value="anon">Some trash class</option>
             <option value="anon">Another trash class</option>
