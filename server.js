@@ -14,10 +14,14 @@ const server = require('http').createServer(app);
 const PORT        = process.argv[2] || process.env.port || 3000;
 const mdb = require('./model/db');
 const io = require('socket.io').listen(server);
+// const methodOverride = require('method-override')
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'dist')));
+
+// app.use(methodOverride);
+
 
 app.use(session({
  secret: 'test',
@@ -27,6 +31,7 @@ app.use(session({
    secure: false
  }
 }));
+
 server.listen(PORT, () => console.log('server here! listening on', PORT));
 
 function sendDataPong(){
@@ -59,8 +64,7 @@ io.sockets.on('connection', (socket)=>{
   console.log('i hear the ping', pingu.message);
   (()=>{
     let me= mdb.any(`
-    SELECT *
-    FROM questions;
+    SELECT * FROM questions ORDER BY id DESC;
    `)
     .then((users) => {
     //   res.users = users;
@@ -105,5 +109,4 @@ const userRouter = require('./routes/users')
 // app.use('/', studentRouter);
 app.use('/api', apiRouter);
 app.use('/teacher', teacherRouter);
-app.use('/users', userRouter)
-
+app.use('/users', userRouter);

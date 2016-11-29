@@ -4,7 +4,7 @@ const db = require('./db');
 // (res.question)to be used wherever this function is exported to
 function showAllQuestions(req, res, next) {
   console.log('insde showAllQuestions');
-  db.any('SELECT * FROM questions ORDER BY votes DESC;')
+  db.any('SELECT * FROM questions ORDER BY id DESC;')
     .then(questions => {
       res.questions = questions;
       // console.log(questions)
@@ -34,6 +34,7 @@ db.one(`
 // value and the results(questions) is passed to the response object
 // (res.question)to be used wherever this function is exported to
 function upVoteQuestion(req, res, next) {
+  console.log(req.body)
   db.none(`
     UPDATE questions
     SET votes = votes + 1

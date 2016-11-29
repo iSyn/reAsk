@@ -32,6 +32,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.2",
     "express.io": "^1.1.13",
+    "method-override": "^2.3.7",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
     "pg-promise": "^5.4.3",

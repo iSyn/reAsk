@@ -16,7 +16,11 @@ class MainBody extends React.Component {
   render() {
     return(
       <div className='content-wrapper'>
-        <QuestionsContainer questions={this.props.questions} getAllQuestions={this.props.getAllQuestions}/>
+        <QuestionsContainer
+            questions={this.props.questions}
+            getAllQuestions={this.props.getAllQuestions}
+            likeQuestions={this.props.likeQuestions}
+            />
         <div className='right-side'></div>
       </div>
     )
