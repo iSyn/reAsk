@@ -16,6 +16,7 @@ CREATE TABLE users (
 
 CREATE TABLE questions (
   id SERIAL PRIMARY KEY,
+  created timestamp NOT NULL DEFAULT localtimestamp,
   username VARCHAR NOT NULL,
   votes INT NOT NULL,
   question_title VARCHAR NOT NULL,
