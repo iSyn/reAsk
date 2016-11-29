@@ -11,7 +11,7 @@ const session     = require('express-session');
 
 const app = express();
 const server = require('http').createServer(app);
-const PORT        = process.argv[2] || process.env.port || 3000;
+const PORT        = process.argv[2] || process.env.PORT || 3000;
 const mdb = require('./model/db');
 const io = require('socket.io').listen(server);
 // const methodOverride = require('method-override')
