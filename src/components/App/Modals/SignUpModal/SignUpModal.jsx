@@ -25,7 +25,7 @@ class SignUpModal extends React.Component {
       <div className='create-account-modal'>
         <header>Create Account</header>
         <div className='circle'></div>
-        <form action="/users" method='post'>
+        <form action="users/create" method='post'>
           <input
             type="text"
             name="user[username]"

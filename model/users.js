@@ -1,5 +1,6 @@
 const db = require('./db');
-
+const bcrypt      = require('bcrypt');
+// const session     = require('express-session');
 //query the database and get all users and send that in the response object
 function showAllUsers(req, res, next){
   db.any(`
@@ -74,10 +75,48 @@ function createUser(req, res, next) {
     }
   }
 
-function userExist(){
-  // get the database
-  // check the user name and password agaoinst the db
+ function userExist(req, res, next){
+//   // get the database
+//   // check the user name and password agaoinst the db
 
-}
+ var data = req.body;
+ console.log('this is the body -->', data);
+
+ db.one(
+   "SELECT * FROM users WHERE username = $1", [data.user.username])
+    .then(function(user) {
+      console.log('user stuff', user);
+      console.log('password stuff', user.password);
+      console.log('data.user.password -->', data.user.password);
+      // bcrypt.compare(data.user.password, user.password, function(err, cmp) {
+      //   if (cmp) {
+      //     console.log('password exists and is true');
+      //     req.session.user = user;
+      //     res.redirect('/index');
+      //   } else {
+      //     console.log('password no existo');
+      //     res.send('Email/Password not found.');
+      //   }
+      // })
+      if (user.password === data.user.password) {
+        console.log('password works');
+        req.session.user = user;
+        console.log(req.session.user);
+        res.redirect('/');
+      } else {
+        console.log('password no existo');
+      }
+      })
+    .catch(function() {
+      res.send('userName/Password not found.');
+    }) // end of catch error
+} // end of function userExist
+
+
+
+
+//   return db.one('SELECT * FROM users WHERE username = $1', [username]);
+
+// }
 //export all the functions so that they may be used else where
-module.exports = { showAllUsers, showAllTeachers, showAllStudents, createUser };
+module.exports = { showAllUsers, showAllTeachers, showAllStudents, createUser , userExist};
