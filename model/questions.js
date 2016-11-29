@@ -4,7 +4,7 @@ const db = require('./db');
 // (res.question)to be used wherever this function is exported to
 function showAllQuestions(req, res, next) {
   console.log('insde showAllQuestions');
-  db.any('SELECT * FROM questions ORDER BY id DESC;')
+  db.any('SELECT * FROM questions ORDER BY created DESC;;')
     .then(questions => {
       res.questions = questions;
       // console.log(questions)
