@@ -10,8 +10,8 @@
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-prebuild": "scripts/deployment_react.sh",
-    "heroku-postbuild": "scripts/deployment_cleanup.sh",
+    "heroku-prebuild": "bash ./scripts/deployment_react.sh",
+    "heroku-postbuild": "bash ./scripts/deployment_cleanup.sh",
     "start": "node server.js",
     "webpack": "webpack",
     "rebuild": "webpack -d --progress",
@@ -38,8 +38,7 @@
     "morgan": "^1.7.0",
     "path": "^0.12.7",
     "pg-promise": "^5.4.3",
-    "socket.io": "^1.6.0",
-    "dotenv": "^2.0.0"
+    "socket.io": "^1.6.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
