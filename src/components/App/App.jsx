@@ -69,18 +69,18 @@ getAllQuestions(){
   console.log('inside of getAllQuestions APPjsx ')
   fetch('/api/questions/')
   //data is returned in the form of json
-    .then(data => data.json())
+    .then(r => r.json())
     .then(data => {
       // console.log(data);
       // the state of the question array is updated and passed the value thats held in the
       // data object
       // console.log('this inside of getAllQuestions: ', this);
+      console.log(data);
       this.setState({
         questions: data
       });
       // console.log('the true values of state --> ', this.state);
     })
-     // .then(this.getAllQuestions())
     .catch(err => console.log(err));
 }
 
