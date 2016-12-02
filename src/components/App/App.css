@@ -52,3 +52,16 @@ footer {
   bottom: 0;
   text-align: center;
 }
+
+.heart {
+  color: red;
+}
+
+footer a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer a:visited {
+  color: initial;
+}

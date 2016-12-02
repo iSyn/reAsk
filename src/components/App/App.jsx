@@ -153,7 +153,7 @@ likeQuestions(event) {
           questions={this.state.questions}
           likeQuestions={(event) => this.likeQuestions(event)}
         />
-        <footer><a href='https://github.com/Project-3-Best-Group/reAsk'>Made with &hearts;</a></footer>
+        <footer><a href='https://github.com/Project-3-Best-Group/reAsk'>Made with <span className='heart'>&hearts;</span></a></footer>
       </div>
     )
   }
