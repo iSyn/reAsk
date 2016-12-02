@@ -45,3 +45,10 @@
 .login-btn:hover {
   background: royalblue;
 }
+
+footer {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  text-align: center;
+}

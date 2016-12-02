@@ -153,6 +153,7 @@ likeQuestions(event) {
           questions={this.state.questions}
           likeQuestions={(event) => this.likeQuestions(event)}
         />
+        <footer>Made with &hearts;</footer>
       </div>
     )
   }
