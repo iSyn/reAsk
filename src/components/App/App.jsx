@@ -26,7 +26,8 @@ class App extends React.Component {
   }
 
   socketFunction(){
-    const socketURL = window.location.protocol + window.location.hostname;
+    const socketURL = `${window.location.protocol}//${window.location.hostname}`;
+    console.log('********************************************')
     console.log(socketURL, 'HERE')
     console.log('inside socket function');
     // const socket = io('http://localhost:3000');
