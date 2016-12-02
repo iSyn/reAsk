@@ -14,7 +14,9 @@ class App extends React.Component {
     super(props);
     //set whatever initial states that will be changed or modified over time
       this.state = {
-      questions: []
+      questions: [],
+      currentQuestionTitle: '',
+      currentQuestionBody: ''
     }
   }
 
@@ -140,7 +142,9 @@ likeQuestions(event) {
 
         <SignUpModal />
         <SignInModal />
-        <AskQuestionsModal createNewQuestion={this.createNewQuestion.bind(this)}/>
+        <AskQuestionsModal
+          createNewQuestion={this.createNewQuestion.bind(this)}
+        />
         <div className='cover-the-page' onClick={this.hideCoverPage.bind(this)}></div>
 
         <div className='header-container'>
