@@ -11,7 +11,7 @@ textarea {
   left: 50%;
   transform: translate(-50%, -50%);
   /*border: 3px solid black;*/
-  background: white;
+  background-color: darkslateblue;
   display: none;
   box-shadow: 0px 5px 10px black;
   text-align: center;
@@ -81,4 +81,9 @@ textarea {
 .input-question-container p {
   font-size: 20px;
   text-align: left;
+}
+
+.button-container button {
+  margin-left: 10px;
+  margin-right: 10px;
 }

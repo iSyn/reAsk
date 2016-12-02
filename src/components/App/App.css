@@ -1,7 +1,8 @@
 .page-container {
   height: 100vh;
   width: 100vw;
-  background: #FDFDFD;
+  /*background: #FDFDFD;*/
+  background: snow;
   overflow: hidden;
   z-index: 0;
 }

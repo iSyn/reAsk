@@ -50,24 +50,6 @@ class AskQuestionsModal extends React.Component {
       askQuestionModal.style.display = 'none'
       coverThePage.style.display = 'none'
 
-      // // Puts the values into elements
-      // let newTitle = document.createElement('h3')
-      // newTitle.innerHTML = title.value
-      // let newQuestion = document.createElement('p')
-      // newQuestion.innerHTML = question.value
-      // let newTags = document.createElement('p')
-      // newTags.innerHTML = `tags: ${tags.value}`
-
-      // // Creates a container and appends all the previous information into it
-      // let questionContainer = document.createElement('div')
-      // questionContainer.className = 'question'
-      // questionContainer.append(newQuestion)
-      // questionContainer.append(newTags)
-      // questionContainer.prepend(newTitle)
-
-      // // Prepends the question into the container
-      // questions.prepend(questionContainer)
-
       // Reset values
       title.value = ''
       question.value = ''
