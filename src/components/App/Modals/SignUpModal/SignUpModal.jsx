@@ -4,13 +4,6 @@ import '../userModal.css'
 
 class SignUpModal extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      dropdown: ''
-    };
-  }
-
   switchToLogin() {
 
     const createAccountModal = document.querySelector('.create-account-modal')
@@ -48,8 +41,8 @@ class SignUpModal extends React.Component {
             placeholder="Email"
             autoComplete="off"
             /> <br />
-          <select name="user[course]" required="required" value={this.state.dropdown}>
-            <option value="" disabled selected>Select your course</option>
+          <select name="user[course]" required="required" value={this.props.disabled}>
+            <option value="disabled" disabled>Select your course</option>
             <option value="wholphins">WDI Wholphins</option>
             <option value="zonkeys">WDI Zonkeys</option>
             <option value="anon">Some trash class</option>
