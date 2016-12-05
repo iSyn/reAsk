@@ -24,11 +24,11 @@ CREATE TABLE questions (
   question_tags VARCHAR NOT NULL
 );
 
-ALTER TABLE ONLY users
-ADD CONSTRAINT username_pkey PRIMARY KEY (username);
+-- ALTER TABLE ONLY users
+-- ADD CONSTRAINT username_pkey PRIMARY KEY (username);
 
-ALTER TABLE ONLY questions
-ADD CONSTRAINT username_fkey FOREIGN KEY (username)
-REFERENCES users(username) On DELETE CASCADE;
+-- ALTER TABLE ONLY questions
+-- ADD CONSTRAINT username_fkey FOREIGN KEY (username)
+-- REFERENCES users(username) On DELETE CASCADE;
 
 COMMIT;
